@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1097301783097",
+    "firebase_url": "https://learnvietnamese-1538d.firebaseio.com",
+    "project_id": "learnvietnamese-1538d",
+    "storage_bucket": "learnvietnamese-1538d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097301783097:android:92ea40eb9792a75f4693e8",
+        "android_client_info": {
+          "package_name": "com.example.projectda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1097301783097-dvgmvkjjk9c4kk8k9aod42lo870k3m9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.projectda",
+            "certificate_hash": "61743468b1809143ff2a7865d81138436079a2dc"
+          }
+        },
+        {
+          "client_id": "1097301783097-e04f6fiteqgjal050j1mb2nssqu2q29t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIsCnf9pX59j_r549jdE8A95rRBmtuDqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1097301783097-e04f6fiteqgjal050j1mb2nssqu2q29t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

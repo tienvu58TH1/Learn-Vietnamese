@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Learn Vietnamese</string>
+    <string name="pref_file">preference_file</string>
+    <string name="pref_login_status">preference_login_status</string>
+    <string name="pref_alphabet_status">preference_alphabet_status</string>
+    <string name="pref_name">preference_name</string>
+    <string name="pref_path">preference_path</string>
+    <string name="pref_iduser">pref_iduser</string>
+    <string name="pref_username">preference_username</string>
+    <string name="pref_password">preference_password</string>
+    <string name="pref_levelwrite">levelwrite</string>
+    <string name="pref_levelspeech">levelspeech</string>
+    <string name="pref_checkadmin">checkadmin</string>
+    <string name="pref_mylang">My_lang</string>
+
+    <string name="tv_login">Login</string>
+    <string name="tv_register" >Register</string>
+    <string name="edt_username">Username</string>
+    <string name="edt_password">Password</string>
+    <string name="edt_name" >Name</string>
+    <string name="tv_Register_now" >Register now</string>
+    <string name="btn_changelanguage" >Change language</string>
+
+    <string name="onfailure_login">Error. Please check network settings and some other settings</string>
+    <string name="login_fail">Login failed. Please check your username or password </string>
+    <string name="login_empty">Please enter your username and password </string>
+    <string name="register_empty">Please enter your full information </string>
+    <string name="password_short">Password must be more than 6 characters</string>
+    <string name="register_success">Register success...</string>
+    <string name="register_exits">User already exits...</string>
+    <string name="register_error">Something went wrong...</string>
+
+    <string name="top_player">Top Player</string>
+    <string name="test">Test</string>
+    <string name="training">Training</string>
+    <string name="music">Vietnamese Music</string>
+    <string name="search">Look up words</string>
+    <string name="info">Infomation</string>
+    <string name="manager_question">Question Management</string>
+    <string name="trainingmanagement">Training Management</string>
+
+    <string name="speaking_test">Speaking test</string>
+    <string name="listening_test">Listening test</string>
+    <string name="statistics">Statistics</string>
+
+    <string name="logout">Logout</string>
+
+    <string name="alphabet_pronunciation">Alphabet pronunciation</string>
+    <string name="training_tts">Training listening</string>
+    <string name="training_stt">Training speaking</string>
+    <string name="choose_topic">Choose topic</string>
+    <string name="alphabet">Alphabet</string>
+
+    <string name="enter_word_want_pronounce">Enter pronunciation words</string>
+
+    <string name="change_password">Change password</string>
+    <string name="score_speech">Score speaking:</string>
+    <string name="score_write">Score listening:</string>
+    <string name="please_update_password">Please update the new password for this account.</string>
+    <string name="new_password">New password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="update">Update</string>
+
+    <string name="level_achieved">Level achieved </string>
+    <string name="question">Question</string>
+    <string name="say_text">Say your text here</string>
+    <string name="please_wait">Please wait</string>
+    <string name="data_null">Data is null, please record again</string>
+    <string name="response_null">Response is null, please record again</string>
+    <string name="something_wrong">Something went wrong, please record again</string>
+
+    <string name="you_get">You get</string>
+    <string name="point_and_pass">points and pass the level</string>
+    <string name="point_and_not_pass">points and not enough to pass the level</string>
+    <string name="points">points</string>
+
+    <string name="content">Content</string>
+    <string name="listen_text">listen to your text here</string>
+
+    <string name="title_change_avatar">Do you want to change your avatar ?</string>
+    <string name="content_change_avatar">Click ok to open the image resoure.</string>
+    <string name="cancle">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="upload_image_success">Upload image success...</string>
+    <string name="upload_name_success">Upload name success...</string>
+
+    <string name="password_is_the_same">The new password must be different from the old one</string>
+    <string name="password_is_not_correct">Password is not correct</string>
+    <string name="update_password_success">Update password success...</string>
+    <string name="wrong_password">Wrong password...</string>
+
+    <string name="update_success">Update success...</string>
+    <string name="update_error">Update failed, please check the data </string>
+    <string name="insert_success">Insert success...</string>
+    <string name="insert_error">Insert failed, please check the data </string>
+    <string name="delete_success">Delete success...</string>
+    <string name="delete_error">Delete failed...</string>
+
+    <string name="delete_title">Delete question</string>
+    <string name="delete_content">Are you sure you want to delete this question ?</string>
+    <string name="delete_topic_title">Delete topic </string>
+    <string name="delete_topic_content">Are you sure you want to delete this topic?</string>
+
+    <string name="insert">Insert</string>
+    <string name="detail_question">Detail Question</string>
+    <string name="update_question">Update Question</string>
+    <string name="insert_question">Insert Question</string>
+
+    <string name="detail_topic">Detail Topic</string>
+    <string name="update_topic">Update Topic</string>
+    <string name="insert_topic">Insert Topic</string>
+
+    <string name="topic_management">Topic Management</string>
+    <string name="question_management">Question Management</string>
+
+    <string name="error_save_score">An error occurred while saving score</string>
+
+    <string name="history">History</string>
+
+    <string name="no_network">No network connection, please check the network setting</string>
+
+    <string name="test_app">Test Application</string>
+    <string name="channel_id">channel id</string>
+</resources>

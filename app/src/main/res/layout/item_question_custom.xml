@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    app:cardCornerRadius="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvQuestion"
+    app:cardElevation="8dp"
+    android:layout_gravity="center"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:gravity="center"
+        android:background="#7E30E6"
+        android:textSize="35sp"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/white"
+        android:layout_height="match_parent"
+        android:text="1" />
+    </androidx.cardview.widget.CardView>

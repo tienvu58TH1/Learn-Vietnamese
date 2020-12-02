@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Learn Vietnamese</string>
+    <string name="pref_file">preference_file</string>
+    <string name="pref_login_status">preference_login_status</string>
+    <string name="pref_alphabet_status">preference_alphabet_status</string>
+    <string name="pref_name">preference_name</string>
+    <string name="pref_path">preference_path</string>
+    <string name="pref_username">preference_username</string>
+    <string name="pref_iduser">pref_iduser</string>
+    <string name="pref_password">preference_password</string>
+    <string name="pref_mylang">My_lang</string>
+    <string name="pref_levelwrite">levelwrite</string>
+    <string name="pref_levelspeech">levelspeech</string>
+    <string name="pref_checkadmin">checkadmin</string>
+
+    <string name="tv_login">Đăng nhập</string>
+    <string name="tv_register" >Đăng ký</string>
+    <string name="edt_username">Tài khoản</string>
+    <string name="edt_password">Mật khẩu</string>
+    <string name="edt_name" >Tên</string>
+    <string name="tv_Register_now" >Đăng ký ngay</string>
+    <string name="btn_changelanguage" >Đổi ngôn ngữ</string>
+
+    <string name="onfailure_login">Đã xảy ra lỗi. Vui lòng kiểm tra cài đặt mạng và một số cài đặt khác của bạn</string>
+    <string name="login_fail">Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản hoặc mật khẩu của bạn </string>
+    <string name="login_empty">Vui lòng nhập tên đăng nhập và mật khẩu của bạn </string>
+    <string name="register_empty">Vui lòng nhập đầy đủ thông tin của bạn </string>
+    <string name="password_short">Mật khẩu của bạn phải nhiều hơn 6 kí tự</string>
+    <string name="register_success">Đăng ký thành công</string>
+    <string name="register_exits">Tài khoản đã tồn tại</string>
+    <string name="register_error">Đã xảy ra lỗi</string>
+
+    <string name="top_player">Bảng xếp hạng</string>
+    <string name="test">Kiểm tra</string>
+    <string name="training">Luyện tập</string>
+    <string name="music">Nghe nhạc Việt</string>
+    <string name="search">Tra cứu từ</string>
+    <string name="info">Thông tin</string>
+    <string name="manager_question">Quản lý câu hỏi</string>
+    <string name="trainingmanagement">Quản lý luyện tập</string>
+
+    <string name="speaking_test">Kiểm tra nói</string>
+    <string name="listening_test">Kiểm tra nghe</string>
+    <string name="statistics">Số liệu thống kê</string>
+
+    <string name="logout">Đăng xuất</string>
+
+    <string name="alphabet_pronunciation">Phát âm bảng chữ cái</string>
+    <string name="training_tts">Luyện tập nghe</string>
+    <string name="training_stt">Luyện tập nói</string>
+    <string name="choose_topic">Chọn chủ đề</string>
+    <string name="alphabet">Bảng chữ cái</string>
+
+    <string name="enter_word_want_pronounce">Nhập từ muốn phát âm</string>
+
+    <string name="change_password">Đổi mật khẩu</string>
+    <string name="score_speech">Điểm nói:</string>
+    <string name="score_write">Điểm nghe:</string>
+    <string name="please_update_password">Hãy cập nhật mật khẩu mới cho tài khoản này.</string>
+    <string name="new_password">Mật khẩu mới</string>
+    <string name="confirm_password">Xác nhận mật khẩu mới</string>
+    <string name="update">Cập nhật</string>
+
+    <string name="level_achieved">Cấp độ đạt </string>
+    <string name="question">Câu hỏi</string>
+    <string name="say_text">Nói văn bản của bạn ở đây</string>
+    <string name="please_wait">Vui lòng đợi</string>
+    <string name="data_null">Dữ liệu rỗng, vui lòng ghi lại</string>
+    <string name="response_null">Phản hồi rỗng, vui lòng ghi lại</string>
+    <string name="something_wrong">Có lỗi xảy ra, vui lòng ghi lại</string>
+
+    <string name="you_get">Bạn được</string>
+    <string name="point_and_pass">điểm và vượt qua cấp độ </string>
+    <string name="point_and_not_pass">điểm và không đủ để vượt qua cấp độ</string>
+    <string name="points">điểm</string>
+
+    <string name="content">Nhập nội dung</string>
+    <string name="listen_text">Nghe văn bản của bạn ở đây</string>
+
+    <string name="title_change_avatar">Bạn có muốn thay đổi hình đại diện của mình không ?</string>
+    <string name="content_change_avatar">Nhấp vào có để mở tài nguyên hình ảnh.</string>
+    <string name="cancle">Không</string>
+    <string name="ok">Có</string>
+    <string name="upload_image_success">Thay đổi ảnh đại diện thành công</string>
+    <string name="upload_name_success">Thay đổi tên thành công</string>
+
+    <string name="password_is_the_same">Mật khẩu mới phải khác với mật khẩu cũ</string>
+    <string name="password_is_not_correct">Mật khẩu xác nhận không đúng</string>
+    <string name="update_password_success">Thay đổi mật khẩu thành công</string>
+    <string name="wrong_password">Sai mật khẩu</string>
+
+    <string name="update_success">Cập nhật thành công </string>
+    <string name="update_error">Cập nhật không thành công, vui lòng kiểm tra lại dữ liệu </string>
+    <string name="insert_success">Thêm dữ liệu thành công</string>
+    <string name="insert_error">Thêm dữ liệu thất bại, vui lòng kiểm tra lại dữ liệu </string>
+    <string name="delete_success">Xóa thành công</string>
+    <string name="delete_error">Xóa thất bại</string>
+
+    <string name="delete_title">Xóa câu hỏi</string>
+    <string name="delete_content">Bạn có chắc chắn muốn xóa câu hỏi này?</string>
+    <string name="delete_topic_title">Xóa chủ đề </string>
+    <string name="delete_topic_content">Bạn có chắc chắn muốn xóa chủ đề này?</string>
+
+    <string name="insert">Thêm</string>
+    <string name="detail_question">Chi tiết câu hỏi </string>
+    <string name="update_question">Cập Nhật Câu Hỏi</string>
+    <string name="insert_question">Thêm Câu Hỏi</string>
+
+    <string name="detail_topic">Chi tiết chủ đề</string>
+    <string name="update_topic">Cập Nhật Chủ Đề</string>
+    <string name="insert_topic">Thêm Chủ Đề</string>
+
+    <string name="topic_management">Quản lý chủ đề</string>
+    <string name="question_management">Quản lý câu hỏi</string>
+
+    <string name="error_save_score">Đã xảy ra lỗi khi lưu điểm</string>
+
+    <string name="history">Lịch sử</string>
+
+    <string name="no_network">Không có kết nối mạng, vui lòng kiểm tra cài đặt mạng</string>
+
+    <string name="test_app">Dùng thử ứng dụng</string>
+    <string name="channel_id">channel id</string>
+</resources>
