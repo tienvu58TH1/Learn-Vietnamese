@@ -3,11 +3,13 @@ package com.example.projectda.fragments;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -139,6 +141,7 @@ public class SearchFragment extends Fragment {
             }
 
         };
+        inputStreamVolleyRequest.setTag("SearchTag");
         ApiClient.getQueue(getContext()).add(inputStreamVolleyRequest);
     }
     private void playMp3(byte[] mp3SoundByteArray) {
@@ -159,5 +162,12 @@ public class SearchFragment extends Fragment {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        ApiClient.getQueue(getContext()).cancelAll("SearchTag");
+        super.onDestroyView();
+
     }
 }
