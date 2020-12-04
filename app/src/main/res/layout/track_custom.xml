@@ -7,6 +7,7 @@
     android:layout_marginTop="5dp"
     android:paddingEnd="5dp"
     android:layout_marginStart="5dp"
+    android:elevation="2dp"
     android:layout_marginEnd="5dp"
     android:background="@drawable/recyclerview_custom">
     <androidx.cardview.widget.CardView

@@ -188,6 +188,7 @@ public class InfoFragment extends Fragment {
         byte[] imgByte= byteArrayOutputStream.toByteArray();
         return Base64.encodeToString(imgByte,Base64.DEFAULT);
     }
+
     private void updateImageToServer(){
         final ProgressDialog progressDialog=new ProgressDialog(getContext());
         progressDialog.setMessage("Uploading...");

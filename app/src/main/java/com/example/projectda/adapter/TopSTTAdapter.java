@@ -2,7 +2,9 @@ package com.example.projectda.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -15,6 +17,7 @@ import com.bumptech.glide.signature.ObjectKey;
 import com.example.projectda.R;
 import com.example.projectda.activity.LoginActivity;
 import com.example.projectda.callback.CallbackMp3;
+import com.example.projectda.callback.CallbackReleaseLongClick;
 import com.example.projectda.models.User;
 
 import java.util.ArrayList;
@@ -25,12 +28,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class TopSTTAdapter extends RecyclerView.Adapter<TopSTTAdapter.ViewHolder> {
     private ArrayList<User> users;
-    private CallbackMp3 callback;
 
-    public TopSTTAdapter(ArrayList<User> users, CallbackMp3 callback){
-        this.users=users;
-        this.callback=callback;
-    }
     public TopSTTAdapter(ArrayList<User> users){
         this.users=users;
     }

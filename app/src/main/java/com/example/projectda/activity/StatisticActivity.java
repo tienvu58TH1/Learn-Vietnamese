@@ -13,6 +13,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 
 import com.example.projectda.R;
@@ -39,6 +41,7 @@ public class StatisticActivity extends AppCompatActivity {
     private int pagenumber=0;
     private int previous_total=0;
     private StatisticAdapter statisticAdapter;
+    private LayoutAnimationController layoutAnimationController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +73,10 @@ public class StatisticActivity extends AppCompatActivity {
                     mStatistics.add(statistic);
                 }
 
+                recyclerView.setLayoutAnimation(layoutAnimationController);
+
                 statisticAdapter.updateAdapter(mStatistics);
+
                 progressBar.setVisibility(View.GONE);
                 progressBarBottom.setVisibility(View.GONE);
             }
@@ -84,10 +90,10 @@ public class StatisticActivity extends AppCompatActivity {
 
     private void setupView() {
         statisticAdapter=new StatisticAdapter(mStatistics);
+        layoutAnimationController= AnimationUtils.loadLayoutAnimation(getApplicationContext(),R.anim.layout_animation_left_to_right);
         final LinearLayoutManager layoutManager=new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(statisticAdapter);
-
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {

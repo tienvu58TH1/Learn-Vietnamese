@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 
 import com.example.projectda.R;
@@ -28,7 +30,8 @@ public class TopTTSFragment extends Fragment {
     private TopTTSAdapter topTTSAdapter;
     private ArrayList<User> users;
     private ProgressBar progressBarTopTTS;
-
+    private RecyclerView recyclerView;
+    private LayoutAnimationController layoutAnimationController;
     public TopTTSFragment(){}
 
     @Nullable
@@ -61,6 +64,8 @@ public class TopTTSFragment extends Fragment {
                 }
                 users= (ArrayList<User>) response.body();
                 progressBarTopTTS.setVisibility(View.GONE);
+
+                recyclerView.setLayoutAnimation(layoutAnimationController);
                 topTTSAdapter.updateTopTTSAdapter(users);
             }
             @Override
@@ -71,8 +76,9 @@ public class TopTTSFragment extends Fragment {
     }
 
     private void setupView(final View view) {
-        RecyclerView recyclerView=view.findViewById(R.id.recyclerViewTopTTS);
+        recyclerView=view.findViewById(R.id.recyclerViewTopTTS);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
+        layoutAnimationController= AnimationUtils.loadLayoutAnimation(getActivity(),R.anim.layout_animation_down_to_up);
         recyclerView.setLayoutManager(layoutManager);
         topTTSAdapter =new TopTTSAdapter(users);
         recyclerView.setAdapter(topTTSAdapter);

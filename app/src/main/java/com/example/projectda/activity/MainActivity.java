@@ -16,13 +16,11 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public static boolean isPlaying=false;
     public static boolean checkShowTrack=false;
     public static int positionTrack=0;
-    public static ArrayList<Track> tracks;
+    public static ArrayList<Track> mTracks;
     private static int current=0;
     public static Bitmap bitmapUser;
     private static boolean isLoadLocale=false;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        tracks=new ArrayList<>();
+        mTracks =new ArrayList<>();
 
         if (!isLoadLocale){
             isLoadLocale=true;
@@ -194,9 +192,9 @@ public class MainActivity extends AppCompatActivity {
     public static void onPreAndNextMp3(CallBackPlayComplete callBackPlayComplete){
         if (isPlaying){
             onStopMp3();
-            onCreateMp3(tracks.get(positionTrack).getLink(),callBackPlayComplete);
+            onCreateMp3(mTracks.get(positionTrack).getLink(),callBackPlayComplete);
         }else {
-            onCreateMp3(tracks.get(positionTrack).getLink(),callBackPlayComplete);
+            onCreateMp3(mTracks.get(positionTrack).getLink(),callBackPlayComplete);
         }
     }
 
@@ -231,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
                 if (response.body()==null){
                     return;
                 }
-                tracks= (ArrayList<Track>) response.body();
+                mTracks = (ArrayList<Track>) response.body();
             }
             @Override
             public void onFailure(Call<List<Track>> call, Throwable t) {

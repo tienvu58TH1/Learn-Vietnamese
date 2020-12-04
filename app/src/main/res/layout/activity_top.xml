@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#7E30E6"
+        android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,6 +21,7 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayoutTop"
+        android:elevation="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#7E30E6"
@@ -28,52 +30,52 @@
         app:layout_constraintTop_toBottomOf="@+id/tbTopPlayer"
         app:tabTextColor="@android:color/white" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        android:elevation="2dp"
-        android:id="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayoutTop">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:textSize="15sp"
-            android:textColor="#99000000"
-            android:textStyle="italic"
-            android:gravity="center"
-            android:text="TOP"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:gravity="center"
-            android:textStyle="italic"
-            android:textColor="#99000000"
-            android:textSize="15sp"
-            android:text="NAME"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:textSize="15sp"
-            android:textColor="#99000000"
-            android:textStyle="italic"
-            android:text="LEVEL"/>
-    </LinearLayout>
-    <View
-        android:id="@+id/divider"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/titleItem"
         android:layout_width="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:background="@android:color/darker_gray"
-        android:layout_height="1dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutTop"
+        app:cardElevation="4dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:elevation="4dp"
+            android:id="@+id/linearLayout">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textSize="15sp"
+                android:textColor="#99000000"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:text="TOP"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:textStyle="italic"
+                android:textColor="#99000000"
+                android:textSize="15sp"
+                android:text="NAME"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="#99000000"
+                android:textStyle="italic"
+                android:text="LEVEL"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPagerTop"
         android:layout_width="match_parent"
@@ -81,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+        app:layout_constraintTop_toBottomOf="@+id/titleItem">
 
     </androidx.viewpager.widget.ViewPager>
 </androidx.constraintlayout.widget.ConstraintLayout>

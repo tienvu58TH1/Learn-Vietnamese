@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -17,14 +18,17 @@ import com.example.projectda.adapter.TrackAdapter;
 import com.example.projectda.callback.CallBackPlayComplete;
 import com.example.projectda.callback.CallbackMp3;
 
+import java.util.Collections;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.example.projectda.activity.MainActivity.tracks;
+import static com.example.projectda.activity.MainActivity.mTracks;
 
 public class Mp3Fragment extends Fragment {
     private TrackAdapter trackAdapter;
@@ -123,14 +127,14 @@ public class Mp3Fragment extends Fragment {
     }
     private void setupView() {
         if (MainActivity.checkShowTrack){
-            Glide.with(context).load(tracks.get(MainActivity.positionTrack).getImage()).into(ivTrack);
-            tvTitle.setText(tracks.get(MainActivity.positionTrack).getTitle());
+            Glide.with(context).load(mTracks.get(MainActivity.positionTrack).getImage()).into(ivTrack);
+            tvTitle.setText(mTracks.get(MainActivity.positionTrack).getTitle());
             if (MainActivity.isPlaying){
                 ibPlay.setImageResource(R.drawable.ic_baseline_pause_24);
             }else {
                 ibPlay.setImageResource(R.drawable.ic_play);
             }
-            if (MainActivity.positionTrack==tracks.size()-1){
+            if (MainActivity.positionTrack== mTracks.size()-1){
                 ibNext.setVisibility(View.INVISIBLE);
                 ibPre.setVisibility(View.VISIBLE);
             }
@@ -148,8 +152,11 @@ public class Mp3Fragment extends Fragment {
     private void setupRecyclerViewMp3(final View view) {
         RecyclerView recyclerViewTrack=view.findViewById(R.id.recyclerViewMp3);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(getContext());
+        LayoutAnimationController layoutAnimationController= AnimationUtils.loadLayoutAnimation(getActivity(),R.anim.layout_animation_right_to_left);
+        recyclerViewTrack.setLayoutAnimation(layoutAnimationController);
         recyclerViewTrack.setLayoutManager(layoutManager);
-        trackAdapter=new TrackAdapter(tracks, new CallbackMp3() {
+
+        trackAdapter=new TrackAdapter(mTracks, new CallbackMp3() {
             @Override
             public void onItemClick(String link,int position) {
                 MainActivity.positionTrack=position;
@@ -165,6 +172,7 @@ public class Mp3Fragment extends Fragment {
             }
         });
         recyclerViewTrack.setAdapter(trackAdapter);
+
     }
 
 }
