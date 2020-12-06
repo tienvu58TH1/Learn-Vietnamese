@@ -146,8 +146,6 @@ public class LoginFragment extends Fragment {
                 LoginActivity.prefConfig.displayToast(getResources().getString(R.string.onfailure_login));
             }
         });
-        edtUsername.setText("");
-        edtPassword.setText("");
     }
     private void showChangeLanguage(){
         final String[] listLanguage = {"English","Việt Nam"};
