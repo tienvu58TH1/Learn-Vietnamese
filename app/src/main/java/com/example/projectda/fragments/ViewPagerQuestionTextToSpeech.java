@@ -172,7 +172,11 @@ public class ViewPagerQuestionTextToSpeech extends Fragment {
         vpQuesitonTTS=view.findViewById(R.id.vpQuestionTTS);
         tvReachLevel=view.findViewById(R.id.tvReachLevelTTS);
 
-        tvReachLevel.setText(getResources().getString(R.string.level_achieved)+" "+TextToSpeechActivity.levelwrite+"/"+TextToSpeechActivity.questions.size());
+        if (TextToSpeechActivity.levelwrite > TextToSpeechActivity.questions.size()){
+            tvReachLevel.setText(getString(R.string.max_level));
+        }else {
+            tvReachLevel.setText(getResources().getString(R.string.level_achieved)+" "+TextToSpeechActivity.levelwrite+"/"+TextToSpeechActivity.questions.size());
+        }
 
         animationPointingDown=new AlphaAnimation(1,0);
         animationPointingDown.setDuration(2000);
@@ -352,7 +356,11 @@ public class ViewPagerQuestionTextToSpeech extends Fragment {
                     LoginActivity.prefConfig.displayToast(getString(R.string.no_network));
                 }
 
-                tvReachLevel.setText(getResources().getString(R.string.level_achieved)+" "+TextToSpeechActivity.levelwrite+"/"+TextToSpeechActivity.questions.size());
+                if (TextToSpeechActivity.levelwrite > TextToSpeechActivity.questions.size()){
+                    tvReachLevel.setText(getString(R.string.max_level));
+                }else {
+                    tvReachLevel.setText(getResources().getString(R.string.level_achieved)+" "+TextToSpeechActivity.levelwrite+"/"+TextToSpeechActivity.questions.size());
+                }
                 setDataViewPager();
             }
             if (CheckConnection.haveNetworkConnection(getContext())){

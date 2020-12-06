@@ -74,7 +74,7 @@
     <string name="point_and_not_pass">points and not enough to pass the level</string>
     <string name="points">points</string>
 
-    <string name="content">Content</string>
+    <string name="content">Import content</string>
     <string name="listen_text">listen to your text here</string>
 
     <string name="title_change_avatar">Do you want to change your avatar?</string>
@@ -121,4 +121,5 @@
     <string name="no_network">No network connection, please check the network setting</string>
 
     <string name="channel_id">channel id</string>
+    <string name="max_level">Max level</string>
 </resources>

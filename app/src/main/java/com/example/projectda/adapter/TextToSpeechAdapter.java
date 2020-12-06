@@ -1,7 +1,6 @@
 package com.example.projectda.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.projectda.R;
-import com.example.projectda.activity.TextToSpeechActivity;
 import com.example.projectda.models.Question;
 import com.example.projectda.callback.CallbackQuestion;
 
@@ -25,7 +23,6 @@ import androidx.recyclerview.widget.RecyclerView;
 public class TextToSpeechAdapter extends RecyclerView.Adapter<TextToSpeechAdapter.ViewHolder> {
     private ArrayList<Question> questions;
     private CallbackQuestion callback;
-    private TextView tvQuestion;
     private TableLayout.LayoutParams params;
     private Context context;
     private int levelarrived;
@@ -53,14 +50,18 @@ public class TextToSpeechAdapter extends RecyclerView.Adapter<TextToSpeechAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         View view= holder.getView();
-        tvQuestion=view.findViewById(R.id.tvQuestion);
+        TextView tvQuestion=view.findViewById(R.id.tvQuestion);
         Question question=questions.get(position);
         tvQuestion.setText(question.getLevel()+"");
         CardView cardView=view.findViewById(R.id.cvQuestion);
         if (question.getLevel() > levelarrived){
-            tvQuestion.setBackgroundColor(Color.GRAY);
+            tvQuestion.setBackgroundResource(R.color.colorGray);
             tvQuestion.setEnabled(false);
             cardView.setCardElevation(0);
+        }else {
+            tvQuestion.setBackgroundResource(R.color.colorMagenta);
+            tvQuestion.setEnabled(true);
+            cardView.setCardElevation(8);
         }
         tvQuestion.setOnClickListener(new View.OnClickListener() {
             @Override

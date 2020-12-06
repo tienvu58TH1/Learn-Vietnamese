@@ -122,4 +122,5 @@
 
     <string name="test_app">Dùng thử ứng dụng</string>
     <string name="channel_id">channel id</string>
+    <string name="max_level">Cấp độ tối đa</string>
 </resources>

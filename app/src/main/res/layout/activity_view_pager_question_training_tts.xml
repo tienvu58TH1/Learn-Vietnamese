@@ -85,23 +85,30 @@
 
     </androidx.cardview.widget.CardView>
 
-    <FrameLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_margin="25dp"
         android:layout_height="0dp"
         android:padding="10dp"
-        android:background="#2603DAC5"
         app:layout_constraintBottom_toTopOf="@+id/btnCheck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView">
-        <EditText
-            android:id="@+id/edtContent"
-            android:hint="@string/content"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:background="@android:color/transparent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="#2603DAC5">
+
+            <EditText
+                android:focusedByDefault="true"
+                android:id="@+id/edtContent"
+                android:hint="@string/content"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView"

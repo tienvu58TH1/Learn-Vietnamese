@@ -27,6 +27,7 @@ import com.example.projectda.R;
 import com.example.projectda.activity.HistoryActivity;
 import com.example.projectda.activity.LoginActivity;
 import com.example.projectda.activity.SpeechToTextActivity;
+import com.example.projectda.activity.TextToSpeechActivity;
 import com.example.projectda.adapter.ViewPagerQuestionSTTAdapter;
 import com.example.projectda.models.Data;
 import com.example.projectda.models.Hypotheses;
@@ -181,7 +182,12 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
     }
 
     private void setupEvent() {
-        tvReachLevel.setText( getResources().getString(R.string.level_achieved)+" "+SpeechToTextActivity.levelspeech+"/"+SpeechToTextActivity.questionsSTT.size());
+        if (SpeechToTextActivity.levelspeech > SpeechToTextActivity.questionsSTT.size()){
+            tvReachLevel.setText(getString(R.string.max_level));
+        }else {
+            tvReachLevel.setText( getResources().getString(R.string.level_achieved)+" "+SpeechToTextActivity.levelspeech+"/"+SpeechToTextActivity.questionsSTT.size());
+        }
+
         btnPlayMP3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -506,7 +512,12 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
                 }else {
                     LoginActivity.prefConfig.displayToast(getString(R.string.no_network));
                 }
-                tvReachLevel.setText(getResources().getString(R.string.level_achieved)+" "+SpeechToTextActivity.levelspeech+"/"+SpeechToTextActivity.questionsSTT.size());
+
+                if (SpeechToTextActivity.levelspeech > SpeechToTextActivity.questionsSTT.size()){
+                    tvReachLevel.setText(getString(R.string.max_level));
+                }else {
+                    tvReachLevel.setText( getResources().getString(R.string.level_achieved)+" "+SpeechToTextActivity.levelspeech+"/"+SpeechToTextActivity.questionsSTT.size());
+                }
                 setDataViewPager();
             }
             Call<User> callScore= SpeechToTextActivity.apiInterface.insertUserQuestion(SpeechToTextActivity.prefConfig.readIdUser(),SpeechToTextActivity.questionsSTT.get(positionVP).getIdQuestion(),t, Calendar.getInstance().getTimeInMillis());
