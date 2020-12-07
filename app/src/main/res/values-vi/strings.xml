@@ -123,4 +123,6 @@
     <string name="test_app">Dùng thử ứng dụng</string>
     <string name="channel_id">channel id</string>
     <string name="max_level">Cấp độ tối đa</string>
+    <string name="title_help">Trợ giúp</string>
+    <string name="content_help">Đây là bảng thống kê số lần vượt qua các câu hỏi ứng với số điểm trung bình của người chơi khi chơi qua màn.</string>
 </resources>

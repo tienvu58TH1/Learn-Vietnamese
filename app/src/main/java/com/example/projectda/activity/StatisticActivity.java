@@ -9,8 +9,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
@@ -18,13 +23,10 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.ProgressBar;
 
 import com.example.projectda.R;
-import com.example.projectda.adapter.HistoryAdapter;
 import com.example.projectda.adapter.StatisticAdapter;
-import com.example.projectda.models.History;
+import com.example.projectda.fragments.DetailQuestionManagementFragment;
 import com.example.projectda.models.Statistic;
 import com.example.projectda.utils.CheckConnection;
-import com.example.projectda.utils.service.ApiClient;
-import com.example.projectda.utils.service.ApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,5 +132,35 @@ public class StatisticActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.draw_menu_help,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item_help:
+                showDialog();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showDialog(){
+        final AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.title_help));
+        builder.setMessage(getResources().getString(R.string.content_help));
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        Dialog dialog=builder.create();
+        dialog.show();
     }
 }

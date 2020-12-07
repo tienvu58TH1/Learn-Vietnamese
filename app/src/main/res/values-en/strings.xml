@@ -123,4 +123,6 @@
     <string name="test_app">Test Application</string>
     <string name="channel_id">channel id</string>
     <string name="max_level">Max level</string>
+    <string name="title_help">Help</string>
+    <string name="content_help">This is a statistics table of the number of passing questions corresponding to the average score of the player when playing through the level.</string>
 </resources>
