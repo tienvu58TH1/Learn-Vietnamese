@@ -124,5 +124,13 @@
     <string name="max_level">Max level</string>
     <string name="title_help">Help</string>
     <string name="content_help">This is a statistics table of the number of passing questions corresponding to the average score of the player when playing through the level.</string>
+    <string name="pref_email">preconfig_email</string>
+    <string name="pref_phone">prefconfig_phone</string>
+    <string name="phone">Phone:</string>
+    <string name="email">Email:</string>
+    <string name="phone_erro">Please enter the correct phone number!</string>
+    <string name="email_erro">Your email is not valid.</string>
+    <string name="edt_phone">Phone</string>
+    <string name="edt_Email">Email</string>
 
 </resources>

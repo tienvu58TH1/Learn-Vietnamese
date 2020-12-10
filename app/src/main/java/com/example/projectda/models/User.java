@@ -25,6 +25,28 @@ public class User {
     @SerializedName("checkadmin")
     private int checkAdmin;
 
+    @SerializedName("phone")
+    private String phone;
+
+    @SerializedName("email")
+    private String email;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setResponse(String response) {
         Response = response;
     }

@@ -124,6 +124,8 @@ public class LoginFragment extends Fragment {
                     LoginActivity.prefConfig.writePath(user.getPath());
                     LoginActivity.prefConfig.writeLevelSpeech(user.getLevelSpeech());
                     LoginActivity.prefConfig.writeLevelWrite(user.getLevelWrite());
+                    LoginActivity.prefConfig.writePhone(user.getPhone());
+                    LoginActivity.prefConfig.writeEmail(user.getEmail());
                     LoginActivity.prefConfig.writeCheckAdmin(user.getCheckAdmin());
                     if (user.getCheckAdmin()==0){
                         Intent intent=new Intent(getContext(), MainActivity.class);

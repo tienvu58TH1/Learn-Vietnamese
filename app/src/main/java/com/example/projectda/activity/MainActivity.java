@@ -111,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
                         LoginActivity.prefConfig.writeIdUser(0);
                         LoginActivity.prefConfig.writeLevelSpeech(1);
                         LoginActivity.prefConfig.writeCheckAdmin(0);
+                        LoginActivity.prefConfig.writePhone("");
+                        LoginActivity.prefConfig.writeEmail("");
                         Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);

@@ -35,45 +35,56 @@ import retrofit2.Response;
 
 public class RegisterFragment extends Fragment {
     private Button btnRegister;
-    private EditText edtName, edtUsername,edtPassword;
+    private EditText edtName, edtUsername, edtPassword, edtPhone, edtEmail;
     private Toolbar tbRegister;
     private LoginActivity context;
-    public RegisterFragment(){}
+
+    public RegisterFragment() {
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        this.context= (LoginActivity) context;
+        this.context = (LoginActivity) context;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_register,container,false);
+        return inflater.inflate(R.layout.fragment_register, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btnRegister=view.findViewById(R.id.btnSaveInfo);
-        edtName=view.findViewById(R.id.edtName);
-        edtUsername=view.findViewById(R.id.tvUsername);
-        edtPassword=view.findViewById(R.id.edtPassword);
+        btnRegister = view.findViewById(R.id.btnSaveInfo);
+        edtName = view.findViewById(R.id.edtName);
+        edtUsername = view.findViewById(R.id.tvUsername);
+        edtPassword = view.findViewById(R.id.edtPassword);
+        edtPhone = view.findViewById(R.id.edtPhone);
+        edtEmail = view.findViewById(R.id.edtEmail);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!edtName.getText().toString().equals("") && !edtUsername.getText().toString().equals("") && !edtPassword.getText().toString().equals("")){
-                    if (edtPassword.getText().toString().length()<=6){
+                if (!edtName.getText().toString().equals("")
+                        && !edtUsername.getText().toString().equals("")
+                        && !edtPassword.getText().toString().equals("")
+                        && !edtEmail.getText().toString().equals("")
+                        && !edtPhone.getText().toString().equals("")) {
+                    if (edtPhone.getText().toString().length() < 10) {
+                        LoginActivity.prefConfig.displayToast(getResources().getString(R.string.phone_erro));
+                    }else if (!isEmailValid(edtEmail.getText().toString())){
+                        LoginActivity.prefConfig.displayToast(getResources().getString(R.string.email_erro));
+                    }else if (edtPassword.getText().toString().length() <= 6) {
                         LoginActivity.prefConfig.displayToast(getResources().getString(R.string.password_short));
-                    }else {
-                        if (CheckConnection.haveNetworkConnection(getContext())){
+                    } else {
+                        if (CheckConnection.haveNetworkConnection(getContext())) {
                             performRegistrantion();
-                        }else {
+                        } else {
                             LoginActivity.prefConfig.displayToast(getString(R.string.no_network));
                         }
                     }
-                }
-                else {
+                } else {
                     LoginActivity.prefConfig.displayToast(getResources().getString(R.string.register_empty));
                 }
             }
@@ -81,8 +92,12 @@ public class RegisterFragment extends Fragment {
         actionBar(view);
     }
 
+    private boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
     private void actionBar(View view) {
-        tbRegister=view.findViewById(R.id.tbRegister);
+        tbRegister = view.findViewById(R.id.tbRegister);
         context.setSupportActionBar(tbRegister);
         context.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tbRegister.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
@@ -94,32 +109,32 @@ public class RegisterFragment extends Fragment {
         });
     }
 
-    private void performRegistrantion(){
-        String image= "default";
-        String name=edtName.getText().toString().toUpperCase();
-        String username=edtUsername.getText().toString();
-        String password=edtPassword.getText().toString();
-        Call<User> call= LoginActivity.apiInterface.performRegistrantion(name,username,password,image);
-        final ProgressDialog progressDialog=new ProgressDialog(getContext());
+    private void performRegistrantion() {
+        String image = "default";
+        String name = edtName.getText().toString().toUpperCase();
+        String username = edtUsername.getText().toString();
+        String password = edtPassword.getText().toString();
+        String phone = edtPhone.getText().toString();
+        String email = edtEmail.getText().toString();
+        Call<User> call = LoginActivity.apiInterface.performRegistrantion(name, username, password,phone,email, image);
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setMessage("Register...");
         progressDialog.show();
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 progressDialog.dismiss();
-                User user=response.body();
-                if (!response.isSuccessful()){
+                User user = response.body();
+                if (!response.isSuccessful()) {
                     return;
                 }
-                if (user==null) return;
-                if (user.getResponse().equals("ok")){
+                if (user == null) return;
+                if (user.getResponse().equals("ok")) {
                     LoginActivity.prefConfig.displayToast(getResources().getString(R.string.register_success));
                     getActivity().getSupportFragmentManager().popBackStack();
-                }
-                else if (user.getResponse().equals("exits")){
+                } else if (user.getResponse().equals("exits")) {
                     LoginActivity.prefConfig.displayToast(getResources().getString(R.string.register_exits));
-                }
-                else if (user.getResponse().equals("error")){
+                } else if (user.getResponse().equals("error")) {
                     LoginActivity.prefConfig.displayToast(getResources().getString(R.string.register_error));
                 }
             }

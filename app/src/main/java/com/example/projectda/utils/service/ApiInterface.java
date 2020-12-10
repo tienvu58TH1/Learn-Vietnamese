@@ -30,6 +30,8 @@ public interface ApiInterface {
             @Field("name") String Name,
             @Field("username") String UserName,
             @Field("password") String PassWord,
+            @Field("phone") String phone,
+            @Field("email") String email,
             @Field("image") String Image
     );
 

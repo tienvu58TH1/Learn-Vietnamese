@@ -106,6 +106,28 @@ public class PrefConfig {
         return path;
     }
 
+    public void writeEmail(String email){
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString(context.getString(R.string.pref_email),email);
+        editor.commit();
+    }
+
+    public String readEmail(){
+        String email=sharedPreferences.getString(context.getString(R.string.pref_email),"email");
+        return email;
+    }
+
+    public void writePhone(String phone){
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString(context.getString(R.string.pref_phone),phone);
+        editor.commit();
+    }
+
+    public String readPhone(){
+        String phone=sharedPreferences.getString(context.getString(R.string.pref_phone),"phone");
+        return phone;
+    }
+
     public void displayToast(String message){
         Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
     }

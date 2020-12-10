@@ -45,7 +45,7 @@ public class InfoFragment extends Fragment {
     private ImageView ivSaveInfo;
     private int REQUEST_CODE=112;
     private Bitmap bitmap;
-    private TextView tvScoreSpeech,tvScoreWrite;
+    private TextView tvScoreSpeech,tvScoreWrite,tvPhone,tvEmail;
     private MainActivity context;
     private Toolbar tbInfo;
     private Call<User> call;
@@ -74,6 +74,8 @@ public class InfoFragment extends Fragment {
         ivSaveInfo.setVisibility(View.GONE);
         tvScoreSpeech=view.findViewById(R.id.tvScoreSpeech);
         tvScoreWrite=view.findViewById(R.id.tvScoreWrite);
+        tvPhone=view.findViewById(R.id.tvPhone);
+        tvEmail=view.findViewById(R.id.tvEmail);
         setupView();
         context.tbMain.setVisibility(View.GONE);
         actionBar(view);
@@ -102,6 +104,8 @@ public class InfoFragment extends Fragment {
 
         tvScoreWrite.setText(LoginActivity.prefConfig.readLevelWrite()+"");
         tvScoreSpeech.setText(LoginActivity.prefConfig.readLevelSpeech()+"");
+        tvPhone.setText(LoginActivity.prefConfig.readPhone());
+        tvEmail.setText(LoginActivity.prefConfig.readEmail());
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -125,4 +125,12 @@
     <string name="max_level">Cấp độ tối đa</string>
     <string name="title_help">Trợ giúp</string>
     <string name="content_help">Đây là bảng thống kê số lần vượt qua các câu hỏi ứng với số điểm trung bình của người chơi khi chơi qua màn.</string>
+    <string name="pref_email">preconfig_email</string>
+    <string name="pref_phone">prefconfig_phone</string>
+    <string name="phone">Phone:</string>
+    <string name="email">Email:</string>
+    <string name="phone_erro">Vui lòng nhập đúng số điện thoại!</string>
+    <string name="email_erro">Email của bạn không hợp lệ.</string>
+    <string name="edt_phone">Số điện thoại</string>
+    <string name="edt_Email">Email</string>
 </resources>
