@@ -20,6 +20,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,6 +85,7 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
     private TextView tvReachLevel;
     private Animation animationSound,animationPointingDown;
     private Call<List<Data>> callData;
+    private ProgressBar progressBarCheck;
 
     public ViewPagerQuestionSpeechToText(int position){
         this.mPosition=position;
@@ -141,7 +143,7 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
         imgSound=view.findViewById(R.id.imgSound);
         tvReachLevel=view.findViewById(R.id.tvReachLevel);
         imgMic=view.findViewById(R.id.btnRecord);
-
+        progressBarCheck=view.findViewById(R.id.progressBarCheck);
 
         vpQuesitonSTT=view.findViewById(R.id.vpQuestionSTT);
     }
@@ -226,11 +228,13 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
                         Toast.makeText(getActivity(),getResources().getString(R.string.please_wait),Toast.LENGTH_SHORT).show();
                         isShowUpload=false;
                         imgMic.setEnabled(false);
+                        progressBarCheck.setVisibility(View.VISIBLE);
                         checkShowIcon();
                         if (CheckConnection.haveNetworkConnection(getContext())){
                             uploadFileWithRetrofit();
                         }else {
                             imgMic.setEnabled(true);
+                            progressBarCheck.setVisibility(View.GONE);
                             LoginActivity.prefConfig.displayToast(getString(R.string.no_network));
                         }
                     }
@@ -422,6 +426,7 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
             @Override
             public void onResponse(Call<List<Data>> call, retrofit2.Response<List<Data>> response) {
                 imgMic.setEnabled(true);
+                progressBarCheck.setVisibility(View.GONE);
                 isShowUpload=true;
                 checkShowIcon();
                 if (response.body()==null){
@@ -443,6 +448,7 @@ public class ViewPagerQuestionSpeechToText extends Fragment {
             @Override
             public void onFailure(Call<List<Data>> call, Throwable t) {
                 imgMic.setEnabled(true);
+                progressBarCheck.setVisibility(View.GONE);
                 if (callData.isCanceled()){
 
                 }else {

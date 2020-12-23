@@ -74,7 +74,6 @@ public interface ApiInterface {
     @GET("getTracks.php")
     Call<List<Track>> getTracksMp3();
 
-
     @GET("getQuestions.php")
     Call<List<Question>> getQuestions(
             @Query("category") int category

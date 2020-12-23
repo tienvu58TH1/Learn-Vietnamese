@@ -86,12 +86,21 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <ImageView
         android:id="@+id/imgSound"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/isrecord"
+        android:visibility="invisible"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCheck"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:visibility="invisible"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th12 10, 2020 lúc 12:43 PM
+-- Thời gian đã tạo: Th12 17, 2020 lúc 02:30 AM
 -- Phiên bản máy phục vụ: 10.3.16-MariaDB
 -- Phiên bản PHP: 7.3.23
 
@@ -69,7 +69,7 @@ INSERT INTO `questions` (`idquestion`, `content`, `level`, `category`, `scorepas
 (5, 'Áo cộc\r\n', 5, 0, 50),
 (6, 'Gia đình tôi', 6, 0, 50),
 (7, 'Màu xanh', 7, 0, 50),
-(8, 'Đi du lịch', 8, 0, 50),
+(8, 'Đi du lịch', 8, 0, 55),
 (9, 'Phở Hà Nội', 9, 0, 50),
 (10, 'Đi chợ mua sắm', 10, 0, 50),
 (11, 'Không có gì', 11, 0, 50),
@@ -86,12 +86,12 @@ INSERT INTO `questions` (`idquestion`, `content`, `level`, `category`, `scorepas
 (22, 'Cho tôi đặt phòng hai ngày', 22, 0, 60),
 (23, 'Chiếc váy một triệu đồng', 23, 0, 60),
 (24, 'Tôi rất thích đọc sách', 24, 0, 60),
-(25, 'Bạn có thích chơi thể thao không?', 25, 0, 60),
+(25, 'Bạn có thích chơi thể thao không', 25, 0, 60),
 (26, 'Ở Mỹ mọi người chủ yếu thích chơi bóng đá', 26, 0, 60),
 (27, 'Người Việt Nam rất thân thiện', 27, 0, 60),
 (28, 'Học tiếng Việt không đơn giản', 28, 0, 60),
 (29, 'Tôi cần hỏi đường tới hồ Hoàn Kiếm', 29, 0, 60),
-(30, 'Đây có phải đường tới khách sạn không?', 30, 0, 60),
+(30, 'Đây có phải đường tới khách sạn không', 30, 0, 60),
 (51, 'Chào bạn\r\n', 1, 1, 50),
 (52, 'Tôi rất khoẻ\r\n', 2, 1, 50),
 (53, 'Hai mươi tuổi\r\n', 3, 1, 50),
@@ -115,7 +115,7 @@ INSERT INTO `questions` (`idquestion`, `content`, `level`, `category`, `scorepas
 (71, 'Món phở rất ngon', 21, 1, 60),
 (72, 'Nhà anh rất đẹp', 22, 1, 60),
 (73, 'Khoảng hơn một tiếng', 23, 1, 60),
-(74, 'Bây giờ mấy giờ?', 24, 1, 60),
+(74, 'Bây giờ mấy giờ', 24, 1, 60),
 (75, 'Bố tôi làm công nhân ', 25, 1, 60),
 (76, 'Tôi muốn đổi sang tiền Việt', 26, 1, 60),
 (77, 'Tám giờ hai mươi phút tối', 27, 1, 60),
@@ -150,19 +150,19 @@ INSERT INTO `questiontopics` (`idquestiontopic`, `content`, `translate`, `level`
 (5, 'Chào thầy giáo', 'Hello teacher', 5, 1),
 (6, 'Chào Mai ', 'Hi Mai', 6, 1),
 (7, 'Chào tất cả mọi người', 'Hello everyone', 7, 1),
-(8, 'Bạn có khoẻ không?', 'How are you?', 8, 1),
+(8, 'Bạn có khoẻ không', 'How are you?', 8, 1),
 (9, 'Rất vui được gặp bạn', 'Nice to meet you', 9, 1),
 (10, 'Rất hận hạnh được gặp bạn', 'Nice to meet you', 10, 1),
-(11, 'Bạn tên là gì?', 'What is your name?', 1, 2),
+(11, 'Bạn tên là gì', 'What is your name?', 1, 2),
 (12, 'Tôi tên là Hoa', 'My name is Hoa', 2, 2),
-(13, 'Tên của bạn là gì?', 'What is your name?', 3, 2),
+(13, 'Tên của bạn là gì', 'What is your name?', 3, 2),
 (14, 'Tên mình là Hoàng', 'My name is Hoàng', 4, 2),
-(15, 'Tên đầy đủ của bạn là gì?', 'What is your full name?', 5, 2),
+(15, 'Tên đầy đủ của bạn là gì', 'What is your full name?', 5, 2),
 (16, 'Tên đầy đủ của tôi là Dương Dương ', 'My full name is Duong Duong', 6, 2),
 (17, 'Cho tôi xin tên của bạn', 'Give me your name', 7, 2),
-(18, 'Bạn có khoẻ không?', 'My name is Hoa', 8, 2),
+(18, 'Bạn có khoẻ không', 'My name is Hoa', 8, 2),
 (19, 'Rất vui được gặp bạn', 'I am Xuan and you?', 9, 2),
-(20, 'Tên của bạn là Tiến phải không?', 'Are you Tiến?', 10, 2),
+(20, 'Tên của bạn là Tiến phải không', 'Are you Tiến?', 10, 2),
 (21, 'Ông nội', 'Grandfather', 1, 3),
 (22, 'Bà', 'Grandmother', 2, 3),
 (23, 'Bố', 'Father', 3, 3),
@@ -567,7 +567,9 @@ INSERT INTO `users` (`iduser`, `name`, `username`, `password`, `phone`, `email`,
 (52, 'TIEN', 'qqq', '1234567', '0967e63407', 'q@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/qqq.jpg', 1, 1, 0),
 (53, 'L', 'qt', '1234567', '0967363407', 'p@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/qt.jpg', 1, 1, 0),
 (61, 'HOA', 'y', '1234t67', '09783634177', 'qq@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/y.jpg', 1, 1, 0),
-(62, 'TIEN', 'tw', '123r567', '0123456789', 'q@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/tw.jpg', 1, 1, 0);
+(62, 'TIEN', 'tw', '123r567', '0123456789', 'q@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/tw.jpg', 1, 1, 0),
+(66, 'tien', 'vutien', '1234567', '0987555444', 'tien@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/vutien.jpg', 1, 1, 0),
+(67, 'DEMO', 'demo', '123456789', '0912234567', 'dovanhaivtcc@gmail.com', 'https://tienvu1305.000webhostapp.com/image_user/demo.jpg', 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -720,7 +722,7 @@ ALTER TABLE `tracks`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT cho bảng `users_questions`

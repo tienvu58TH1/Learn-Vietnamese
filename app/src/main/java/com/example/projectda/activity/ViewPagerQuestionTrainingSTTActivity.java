@@ -27,6 +27,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +75,7 @@ public class ViewPagerQuestionTrainingSTTActivity extends AppCompatActivity impl
     private int idtopic,numbertopic;
     private ApiInterface apiInterface;
     private TextView tvUpdating;
+    private ProgressBar progressBarCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +125,8 @@ public class ViewPagerQuestionTrainingSTTActivity extends AppCompatActivity impl
 
         vpQuesitonSTT=findViewById(R.id.vpQuestionSTT);
         tvUpdating=findViewById(R.id.tvUpdating);
+
+        progressBarCheck=findViewById(R.id.progressBarCheck);
     }
 
     private void checkShowIcon(){
@@ -218,12 +222,14 @@ public class ViewPagerQuestionTrainingSTTActivity extends AppCompatActivity impl
                     if (isShowUpload){
                         Toast.makeText(getApplicationContext(),getResources().getString(R.string.please_wait),Toast.LENGTH_SHORT).show();
                         isShowUpload=false;
+                        progressBarCheck.setVisibility(View.VISIBLE);
                         imgMic.setEnabled(false);
                         checkShowIcon();
                         if (CheckConnection.haveNetworkConnection(getApplicationContext())){
                             uploadFileWithRetrofit();
                         }else {
                             imgMic.setEnabled(true);
+                            progressBarCheck.setVisibility(View.GONE);
                             LoginActivity.prefConfig.displayToast(getString(R.string.no_network));
                         }
                     }
@@ -431,6 +437,7 @@ public class ViewPagerQuestionTrainingSTTActivity extends AppCompatActivity impl
             @Override
             public void onResponse(Call<List<Data>> call, retrofit2.Response<List<Data>> response) {
                 imgMic.setEnabled(true);
+                progressBarCheck.setVisibility(View.GONE);
                 isShowUpload=true;
                 checkShowIcon();
                 if (response.body()==null){
@@ -452,6 +459,7 @@ public class ViewPagerQuestionTrainingSTTActivity extends AppCompatActivity impl
             @Override
             public void onFailure(Call<List<Data>> call, Throwable t) {
                 imgMic.setEnabled(true);
+                progressBarCheck.setVisibility(View.GONE);
                 if (callData.isCanceled()){
 
                 }else {
